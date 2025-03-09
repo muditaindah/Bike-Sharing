@@ -103,6 +103,8 @@ with col1:
     centre_circle_2011 = plt.Circle((0, 0), 0.70, fc="black")
     ax_2011.add_artist(centre_circle_2011)
     ax_2011.set_title("2011 - Registered vs Casual Users", color="white")
+    fig_2011.patch.set_facecolor("black")
+    ax_2011.set_facecolor("black")
     st.pyplot(fig_2011)
 
 # 2012 Donut Chart
@@ -125,6 +127,8 @@ with col2:
     centre_circle_2012 = plt.Circle((0, 0), 0.70, fc="black")
     ax_2012.add_artist(centre_circle_2012)
     ax_2012.set_title("2012 - Registered vs Casual Users", color="white")
+    fig_2012.patch.set_facecolor("black")
+    ax_2012.set_facecolor("black")
     st.pyplot(fig_2012)
 
 # Sidebar
@@ -146,6 +150,8 @@ if not filtered_data.empty:
     ax.set_ylabel("Total Rentals", color="white")
     ax.grid(True, linestyle='--', alpha=0.4)
     ax.tick_params(axis='both', colors="white")
+    fig.patch.set_facecolor("black")
+    ax.set_facecolor("black")
 
     st.pyplot(fig)
 else:
@@ -163,7 +169,8 @@ with col1:
     ax_2011_rentals.set_ylabel("Total Rentals", color="white")
     ax_2011_rentals.grid(True, linestyle='--', alpha=0.4)
     ax_2011_rentals.tick_params(axis='both', colors="white")
-
+    fig_2011_rentals.patch.set_facecolor("black")
+    ax_2011_rentals.set_facecolor("black")
     st.pyplot(fig_2011_rentals)
 
 with col2:
@@ -175,7 +182,8 @@ with col2:
     ax_2012_rentals.set_ylabel("Total Rentals", color="white")
     ax_2012_rentals.grid(True, linestyle='--', alpha=0.4)
     ax_2012_rentals.tick_params(axis='both', colors="white")
-
+    fig_2012_rentals.patch.set_facecolor("black")
+    ax_2012_rentals.set_facecolor("black")
     st.pyplot(fig_2012_rentals)
 
 df['hour'] = pd.to_datetime(df['hr'], format='%H').dt.hour
@@ -212,5 +220,7 @@ ax.tick_params(axis='both', colors="white")
 ax.set_xticks(range(0, 24))
 ax.set_xticklabels(range(0, 24))
 ax.grid(True, linestyle='--', alpha=0.4)
+fig.patch.set_facecolor("black")
+ax.set_facecolor("black")
 
 st.pyplot(fig)
